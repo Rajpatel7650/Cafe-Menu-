@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="About Order"> <!-- meta data of page -->
+
+    <link rel="stylesheet" href="main.css">
+   <script>
+      var total =0; // create total variable that store total cost of coffee
+   </script>
+   <head>
+      <title>
+         Order
+      </title>
+
+   </head>
+   <body>
+       <!-- create a link for about us page -->
+      <header style="" class="main">
+        <h1> <button style ="float:right" onclick ="about()"> About Us</button> </h1> 
+        <img src="images/logo.png" alt="" class="logo">
+        <hr>
+         <h1>
+         Menu
+         <h1>
+         <h2> Click an item to add it your order</h2> <!--  Show message on screen-->
+         <div style="display:inline-block; cursor:pointer;">
+            <div class="container" onclick ="fun1()" style="display:inline-block">   <!-- create one image and show in ractangle box -->
+               <img src="images/coffee1.jpg" alt="Workplace" usemap="#workmap"  width="200" height="150">
+               <div class="overlay">
+                  <div class="text">Latte  <br/> $3.50</div>
+               </div>
+            </div>
+            <div class="container" onclick ="fun2()" style="display:inline-block"> <!-- create second image and show in ractangle box -->
+               <img src="images/coffee2.jpg" alt="Workplace" usemap="#workmap" width="200" height="150">
+               <div class="overlay">
+                  <div class="text">Brew  <br/> $2.50</div>
+               </div>
+            </div>
+            <div class="container" onclick ="fun3()" style="display:inline-block"> <!-- create third image and show in ractangle box -->
+               <img src="images/coffee3.jpg" alt="Workplace" usemap="#workmap" width="200" height="150">
+               <div class="overlay">
+                  <div class="text">French    <br/> $2.34</div>
+               </div>
+            </div>
+            <div class="container" onclick ="fun4()" style="display:inline-block"> <!-- create fourth image and show in ractangle box -->
+               <img src="images/coffee4.jpg" alt="Workplace" usemap="#workmap" width="200" height="150">
+               <div class="overlay">
+                  <div class="text">Espresso  <br/> $1.50</div>
+               </div>
+            </div>
+            <div class="container"  onclick ="fun5()" style="display:inline-block"><!-- create fifth image and show in ractangle box -->
+               <img src="images/coffee5.jpg" alt="Workplace" usemap="#workmap" width="200" height="150">
+               <div class="overlay">
+                  <div class="text">Moka Pot  <br/> $2.32</div>
+               </div>
+            </div>
+            <div class="container" onclick ="fun6()" style="display:inline-block"> <!-- create sixth image and show in ractangle box -->
+               <img src="images/coffee6.jpg" alt="Workplace" usemap="#workmap" width="200" height="150">
+               <div class="overlay">
+                  <div class="text">Scone   <br/> $2.95</div>
+               </div>
+            </div>
+
+         </div>
+         <h1> Your Order</h1>
+         <textarea id="text1" rows="8" cols="50"></textarea> <!-- Show textarea  -->
+         <h2> Total: $<span id ="total1">0 &nbsp;</span></h2>  <!-- Print all the total of cost-->
+         <input  type ="button"  onclick="order()" value = "Place order" /> <!-- create button -->
+         <input  type ="button"  onclick="next()" value = "Clear order" /> <!-- create button -->
+      </header>
+      <script>
+         function fun1(){  //create a function for update total price and append a text on text
+
+         total = total+3.50;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$3.50 - Latte \n" ;
+         document.getElementById("total1").innerHTML = total ;
+         }
+         function fun2(){ //create a function for update total price and append a text on text
+
+         total = total+2.50;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$2.50 - Brew \n" ;
+         document.getElementById("total1").innerHTML = total ;
+
+         }
+         function fun3(){ //create a function for update total price and append a text on text
+
+         total = total+2.34;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$2.34 - French \n" ;
+         document.getElementById("total1").innerHTML = total ;
+
+         }
+         function fun4(){ //create a function for update total price and append a text on text
+
+         total = total+1.50;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$1.50 - Espresso \n" ;
+         document.getElementById("total1").innerHTML = total ;
+
+         }
+         function fun5(){
+
+         total = total+2.32;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$2.32 - Moka Pot \n" ;
+         document.getElementById("total1").innerHTML = total ;
+
+         }
+         function fun6(){ //create a function for update total price and append a text on text
+
+         total = total+2.95;
+         var data = document.getElementById("text1").value;
+         document.getElementById("text1").innerHTML = data+"$2.95 - Scone \n" ;
+         document.getElementById("total1").innerHTML = total ;
+
+         }
+         function order()  // this function will move page to success page
+         {
+         //alert("Order Placed Successfully");
+         window.location.href = "checkout.html";
+         }
+         function about() //create function that show about page
+         {
+
+         window.location.href = "about.html";
+         }
+         function next() // this function is used to make empty data in textaread
+         {
+         total =0;
+         document.getElementById("text1").innerHTML = "" ;
+         document.getElementById("total1").innerHTML = 0 ;
+         }
+      </script>
+   </body>
+</html>
